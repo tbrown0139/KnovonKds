@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knovon for Kids</title>
+    <style>
+        /* Basic page styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+        }
+
+        /* Centered content */
+        .content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* Translucent logo styling */
+        .logo {
+            width: 200px;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        /* Request Early Access button styling */
+        .request-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        /* Overlay styling */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        /* Show overlay */
+        .overlay.active {
+            display: flex;
+        }
+
+        /* Close button */
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Knovon for Kids. A Knovon Company</h1>
+        <img src="logo.png" alt="Knovon for Kids Logo" class="logo">
+    </div>
+
+    <button class="request-btn" onclick="showOverlay()">Request Early Access</button>
+
+    <div class="overlay" id="overlay">
+        <div>
+            <p>Knovon for Kids is a parental control system for mobile devices and computers. It provides kids with a safe, controllable internet experience.</p>
+            <p>To request early access, please contact us at <strong>Kids@Knovon.org</strong>.</p>
+            <button class="close-btn" onclick="hideOverlay()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showOverlay() {
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function hideOverlay() {
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
