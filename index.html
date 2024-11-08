@@ -8,12 +8,11 @@
         :root {
             --primary-color: #007bff;
             --background-color: #f7f9fc;
-            --overlay-background: rgba(0, 0, 0, 0.6);
+            --overlay-background: rgba(0, 0, 0, 0.85); /* Updated for less transparency */
             --font-color: #333;
             --button-hover-color: #0056b3;
         }
 
-        /* Base styling */
         * {
             margin: 0;
             padding: 0;
@@ -31,13 +30,11 @@
             overflow: hidden;
         }
 
-        /* Main content */
         .content {
             text-align: center;
             animation: fadeIn 1s ease-out;
         }
 
-        /* Heading styling */
         h1 {
             font-size: clamp(2rem, 4vw, 3.5rem);
             color: var(--primary-color);
@@ -50,7 +47,6 @@
             font-weight: 400;
         }
 
-        /* Logo styling */
         .logo {
             width: clamp(150px, 20vw, 250px);
             opacity: 0.75;
@@ -61,7 +57,6 @@
             opacity: 0.9;
         }
 
-        /* Button styling */
         .request-btn {
             position: absolute;
             top: 20px;
@@ -80,7 +75,6 @@
             background-color: var(--button-hover-color);
         }
 
-        /* Overlay styling */
         .overlay {
             display: none;
             position: fixed;
@@ -92,11 +86,12 @@
             color: white;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            font-size: clamp(1em, 2vw, 1.5em);
+            text-align: left;
+            font-size: clamp(1em, 2vw, 1.1em);
             padding: 20px;
             transition: opacity 0.5s ease;
             z-index: 10;
+            overflow-y: auto;
         }
 
         .overlay.active {
@@ -104,7 +99,16 @@
             animation: fadeIn 0.5s ease-out;
         }
 
-        /* Close button */
+        .overlay-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .overlay-content p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
         .close-btn {
             margin-top: 20px;
             padding: 10px 20px;
@@ -116,7 +120,6 @@
             color: white;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -133,9 +136,24 @@
     <button class="request-btn" onclick="showOverlay()">Request Early Access</button>
 
     <div class="overlay" id="overlay">
-        <div>
-            <p>Knovon for Kids is a parental control system for mobile devices and computers. It provides kids with a safe, controllable internet experience.</p>
-            <p>To request early access, please contact us at <strong>Kids@Knovon.org</strong>.</p>
+        <div class="overlay-content">
+            <h2>Join Knovon for Kids Early Access!</h2>
+            <p>Safeguard Your Child’s Digital World with Ease and Peace of Mind</p>
+            <p>Are you looking for a seamless, powerful way to manage and protect your child’s online experience? Knovon for Kids is your all-in-one parental control solution, designed to empower parents with simple, yet robust tools to guide and safeguard kids as they navigate the digital world.</p>
+            <h3>Why Knovon for Kids?</h3>
+            <p>Knovon for Kids combines Mobile Device Management (MDM), VPN, and DNS filtering into one easy-to-use platform. Built with both kids' safety and parents' peace of mind in mind, Knovon for Kids gives you total control over what your children see, explore, and interact with online—without complexity. Whether you're managing screen time, filtering online content, or tracking your child’s device location, Knovon for Kids provides a simple solution for families.</p>
+            <h3>What Early Access Includes:</h3>
+            <p><strong>Comprehensive Device Management:</strong> Remotely adjust your child’s device settings, set screen time limits, restrict app usage, and even create custom geofenced areas with instant alerts.</p>
+            <p><strong>Secure, Kid-Friendly Internet:</strong> Our built-in VPN service keeps your child's online activity private and secure, while DNS filtering lets you block inappropriate sites and categorize web content by age group—creating a safer internet, tailored for their needs.</p>
+            <p><strong>Real-Time Alerts & Insights:</strong> Stay informed with real-time notifications on your child’s online activity, and access weekly summaries to gain insights into their browsing habits, time spent on apps, and more.</p>
+            <p><strong>Quick Start, No-Fuss Setup:</strong> Choose the Knovon Default Protection Mode for a pre-configured, out-of-the-box experience that installs in minutes and ensures immediate child-safe protection—no technical setup required!</p>
+            <h3>Exclusive Benefits for Early Access Members:</h3>
+            <p><strong>Direct Communication:</strong> Engage with our development team, share your experiences, and help shape Knovon for Kids by suggesting new features.</p>
+            <p><strong>Complimentary Subscription Period:</strong> Enjoy extended free access to the platform for early testers as our thanks for joining our journey to protect kids online.</p>
+            <p><strong>Priority Customer Support:</strong> Get dedicated, priority support to make setup and management effortless.</p>
+            <h3>Join the Knovon for Kids Early Access Program</h3>
+            <p>Help us create the best parental control system on the market, tailored to the needs of modern families. Sign up today for early access to Knovon for Kids and take the first step in providing your child with a safer, more balanced online experience.</p>
+            <p><strong>Request Early Access at Kids@Knovon.org</strong>. Be one of the first to discover a new era of parental control with Knovon for Kids.</p>
             <button class="close-btn" onclick="hideOverlay()">Close</button>
         </div>
     </div>
